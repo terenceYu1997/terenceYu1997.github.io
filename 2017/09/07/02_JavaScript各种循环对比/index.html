@@ -8,16 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>JavaScript各种循环对比 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]     数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余,">
+  <meta name="description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]    1.数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余">
 <meta property="og:type" content="article">
 <meta property="og:title" content="JavaScript各种循环对比">
 <meta property="og:url" content="http://yoursite.com/2017/09/07/02_JavaScript各种循环对比/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]     数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余,">
-<meta property="og:updated_time" content="2017-09-07T01:26:17.565Z">
+<meta property="og:description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]    1.数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余">
+<meta property="og:updated_time" content="2017-09-07T01:32:08.861Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="JavaScript各种循环对比">
-<meta name="twitter:description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]     数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余,">
+<meta name="twitter:description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]    1.数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -177,8 +177,7 @@
 <blockquote>
 <p><strong>数组 : For / ForEach / Map /Reduce /Filter </strong><br><strong>对象 : For In / For of(ES6) / testObj[‘name’]</strong>  </p>
 </blockquote>
-<ol>
-<li><p><strong>数组遍历</strong></p>
+<p>1.<strong>数组遍历</strong></p>
 <ul>
 <li><p>普通For循环</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (int i = <span class="number">100</span>; i &gt; <span class="number">0</span> ; i--)</div><div class="line">&#123;</div><div class="line">  Console.WriteLine(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -187,10 +186,8 @@
 <li><p>ForEach</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ary = [<span class="number">12</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">42</span>,<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> res = ary.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(item)</div><div class="line">  <span class="built_in">console</span>.log(index)</div><div class="line">  <span class="built_in">console</span>.log(input)</div><div class="line">  input[index] = item*<span class="number">10</span>;</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt;undefined;</span></div><div class="line"><span class="built_in">console</span>.log(ary);<span class="comment">//--&gt;会对原来的数组产生改变；</span></div></pre></td></tr></table></figure>
 <p><strong><em>用来代替for循环,写法更简洁</em></strong></p>
-</li>
-</ul>
 <a id="more"></a>
-<ul>
+</li>
 <li><p>Map</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不使用Map</span></div><div class="line"><span class="keyword">var</span> oldArr = [&#123;<span class="attr">first_name</span>:<span class="string">"Colin"</span>,<span class="attr">last_name</span>:<span class="string">"Toh"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Addy"</span>,<span class="attr">last_name</span>:<span class="string">"Osmani"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Yehuda"</span>,<span class="attr">last_name</span>:<span class="string">"Katz"</span>&#125;];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewArr</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> newArr = [];</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i= <span class="number">0</span>, l = oldArr.length; i&lt; l; i++)&#123;</div><div class="line">    <span class="keyword">var</span> item = oldArr[i];</div><div class="line">    item.full_name = [item.first_name,item.last_name].join(<span class="string">" "</span>);</div><div class="line">    newArr[i] = item;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用Map</span></div><div class="line"><span class="keyword">var</span> oldArr = [&#123;<span class="attr">first_name</span>:<span class="string">"Colin"</span>,<span class="attr">last_name</span>:<span class="string">"Toh"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Addy"</span>,<span class="attr">last_name</span>:<span class="string">"Osmani"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Yehuda"</span>,<span class="attr">last_name</span>:<span class="string">"Katz"</span>&#125;];</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewArr</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     </div><div class="line">  <span class="keyword">return</span> oldArr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    item.full_name = [item.first_name,item.last_name].join(<span class="string">" "</span>);</div><div class="line">    <span class="keyword">return</span> item;</div><div class="line">  &#125;);</div><div class="line">   </div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(getNewArr());</div></pre></td></tr></table></figure>
@@ -205,15 +202,14 @@
 <p><strong><em>Filter比ForEach更为简洁,不改变原数组的值,筛选元素更加方便。</em></strong></p>
 </li>
 </ul>
-</li>
-<li><p>对象遍历</p>
+<p>2.对象遍历</p>
 <ul>
 <li><p>For In / For of</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">"a"</span>,<span class="string">"b"</span>];</div><div class="line"><span class="keyword">for</span> (a <span class="keyword">in</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a);<span class="comment">//1,2</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (a <span class="keyword">of</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a);<span class="comment">//a,b</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p><strong><em>For In遍历对象的键 For of (ES6)遍历对象的值  —&gt;  也可用于数组的遍历(不如用forEach)</em></strong></p>
 </li>
 </ul>
-</li>
+<ol>
 <li><p><strong>总结</strong></p>
 <ul>
 <li><strong>数组 : </strong><ul>

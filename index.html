@@ -175,8 +175,7 @@
 <blockquote>
 <p><strong>数组 : For / ForEach / Map /Reduce /Filter </strong><br><strong>对象 : For In / For of(ES6) / testObj[‘name’]</strong>  </p>
 </blockquote>
-<ol>
-<li><p><strong>数组遍历</strong></p>
+<p>1.<strong>数组遍历</strong></p>
 <ul>
 <li><p>普通For循环</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (int i = <span class="number">100</span>; i &gt; <span class="number">0</span> ; i--)</div><div class="line">&#123;</div><div class="line">  Console.WriteLine(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
@@ -185,8 +184,6 @@
 <li><p>ForEach</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ary = [<span class="number">12</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">42</span>,<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> res = ary.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(item)</div><div class="line">  <span class="built_in">console</span>.log(index)</div><div class="line">  <span class="built_in">console</span>.log(input)</div><div class="line">  input[index] = item*<span class="number">10</span>;</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt;undefined;</span></div><div class="line"><span class="built_in">console</span>.log(ary);<span class="comment">//--&gt;会对原来的数组产生改变；</span></div></pre></td></tr></table></figure>
 <p><strong><em>用来代替for循环,写法更简洁</em></strong></p>
-</li>
-</ul>
         
           <a class="article-more-a" href="/2017/09/07/02_JavaScript各种循环对比/#more">more >></a>
         
