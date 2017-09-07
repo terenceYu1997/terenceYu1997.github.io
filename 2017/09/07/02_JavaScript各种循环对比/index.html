@@ -8,19 +8,16 @@
   <link rel="dns-prefetch" href="http://yoursite.com">
   <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
+  <meta name="description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]     数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余,">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/2017/08/28/01_vue element ui表单修改子组件绑定值思路/index.html">
+<meta property="og:url" content="http://yoursite.com/2017/09/07/02_JavaScript各种循环对比/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
-<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png">
-<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/29757510-eca88f50-8bde-11e7-8ffe-8c9b48e00389.png">
-<meta property="og:updated_time" content="2017-08-28T03:05:07.436Z">
+<meta property="og:description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]     数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余,">
+<meta property="og:updated_time" content="2017-09-07T01:20:50.237Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
-<meta name="twitter:description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
-<meta name="twitter:image" content="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png">
+<meta name="twitter:description" content="#JavaScript各种循环对比  数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]     数组遍历  普通For循环 1234for (int i = 100; i &amp;gt; 0 ; i--)&amp;#123;  Console.WriteLine(i);&amp;#125; 写法冗余,">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -156,19 +153,65 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-01_vue element ui表单修改子组件绑定值思路" class="article article-type-post " itemscope itemprop="blogPost">
+            <article id="post-02_JavaScript各种循环对比" class="article article-type-post " itemscope itemprop="blogPost">
   <div class="article-inner">
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="Element-ui-修改表单绑定props值"><a href="#Element-ui-修改表单绑定props值" class="headerlink" title="Element ui 修改表单绑定props值"></a>Element ui 修改表单绑定props值</h2><ol>
-<li><strong>业务需求</strong> : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示.</li>
-<li><p><strong>实现</strong>: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.</p>
-<p><img src="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png" alt="image"></p>
+        <p>#JavaScript各种循环对比</p>
+<blockquote>
+<p><strong>数组 : For / ForEach / Map /Reduce /Filter </strong><br><strong>对象 : For In / For of(ES6) / testObj[‘name’]</strong>  </p>
+</blockquote>
+<ol>
+<li><p><strong>数组遍历</strong></p>
+<ul>
+<li><p>普通For循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (int i = <span class="number">100</span>; i &gt; <span class="number">0</span> ; i--)</div><div class="line">&#123;</div><div class="line">  Console.WriteLine(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>写法冗余,适合初学者,通过调试可以直观的看到循环的流程</em></strong></p>
 </li>
-<li><p><strong>问题</strong> : 由于管辖公司的值是通过props从父组件获取(父组件通过v-bind传值给子组件),子组件管辖公司所v-model的值是直接与父组件的值关联的,子组件并不能直接改变父组件的值.</p>
-<a id="more"></a></li>
-<li><strong>解决思路</strong> : 子组件表单(修改用户) 依旧通过props的editData获取父组件的值,在子组件created/watch的时候,在data中声明变量tempTreeObj. 将editData的treeCodesObj赋值给在data中声明变量tempTreeObj.<br>这样就可以修改子组件将editData的treeCodesObj赋值给在data中声明变量tempTreeObj值.<br><img src="https://user-images.githubusercontent.com/23348422/29757510-eca88f50-8bde-11e7-8ffe-8c9b48e00389.png" alt="image"></li>
+<li><p>ForEach</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ary = [<span class="number">12</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">42</span>,<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> res = ary.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(item)</div><div class="line">  <span class="built_in">console</span>.log(index)</div><div class="line">  <span class="built_in">console</span>.log(input)</div><div class="line">  input[index] = item*<span class="number">10</span>;</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt;undefined;</span></div><div class="line"><span class="built_in">console</span>.log(ary);<span class="comment">//--&gt;会对原来的数组产生改变；</span></div></pre></td></tr></table></figure>
+<p><strong><em>用来代替for循环,写法更简洁</em></strong></p>
+</li>
+<li><p>Map</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不使用Map</span></div><div class="line"><span class="keyword">var</span> oldArr = [&#123;<span class="attr">first_name</span>:<span class="string">"Colin"</span>,<span class="attr">last_name</span>:<span class="string">"Toh"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Addy"</span>,<span class="attr">last_name</span>:<span class="string">"Osmani"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Yehuda"</span>,<span class="attr">last_name</span>:<span class="string">"Katz"</span>&#125;];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewArr</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> newArr = [];</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i= <span class="number">0</span>, l = oldArr.length; i&lt; l; i++)&#123;</div><div class="line">    <span class="keyword">var</span> item = oldArr[i];</div><div class="line">    item.full_name = [item.first_name,item.last_name].join(<span class="string">" "</span>);</div><div class="line">    newArr[i] = item;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用Map</span></div><div class="line"><span class="keyword">var</span> oldArr = [&#123;<span class="attr">first_name</span>:<span class="string">"Colin"</span>,<span class="attr">last_name</span>:<span class="string">"Toh"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Addy"</span>,<span class="attr">last_name</span>:<span class="string">"Osmani"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Yehuda"</span>,<span class="attr">last_name</span>:<span class="string">"Katz"</span>&#125;];</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewArr</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     </div><div class="line">  <span class="keyword">return</span> oldArr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    item.full_name = [item.first_name,item.last_name].join(<span class="string">" "</span>);</div><div class="line">    <span class="keyword">return</span> item;</div><div class="line">  &#125;);</div><div class="line">   </div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(getNewArr());</div></pre></td></tr></table></figure>
+<p><strong><em>Map使用方法与forEach相同,不过不会修改原数组的值,遍历后返回的值会拼成一个新的数组。只需要声明一个变量来接收这个数组就可以</em></strong></p>
+</li>
+<li><p>Reduce</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">passValue</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">total,currentValue,currentIndex,arr</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"prev:"</span>,total);<span class="comment">//所有计算后的值</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"next:"</span>,currentValue);<span class="comment">//当前循环到的值</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"next:"</span>,currentIndex);<span class="comment">//当前循环index</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"next:"</span>,arr);<span class="comment">//当前循环 源 数组</span></div><div class="line"></div><div class="line">    total[currentValue] = <span class="number">1</span>;</div><div class="line">    <span class="comment">//currentValue是当前循环到的值,让这个值做对象的键,并给他复制为1</span></div><div class="line">    <span class="keyword">return</span> total;</div><div class="line">  &#125;,&#123;<span class="attr">name</span>:<span class="string">'呵呵'</span>&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> newObject = passValue()</div><div class="line"><span class="built_in">console</span>.log(newObject)</div></pre></td></tr></table></figure>
+<p><strong><em>Reduce外层是普通的for循环,回调函数里面所用到的total使用的是递归方法,可以存储所有计算的总和</em></strong></p>
+</li>
+<li><p>Filter </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ages = [<span class="number">32</span>, <span class="number">33</span>, <span class="number">16</span>, <span class="number">40</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAdult</span>(<span class="params">age,currentIndex,arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> age &gt;= <span class="number">18</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML = ages.filter(checkAdult);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>Filter比ForEach更为简洁,不改变原数组的值,筛选元素更加方便。</em></strong></p>
+</li>
+</ul>
+</li>
+<li><p>对象遍历</p>
+<ul>
+<li><p>For In / For of</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">"a"</span>,<span class="string">"b"</span>];</div><div class="line"><span class="keyword">for</span> (a <span class="keyword">in</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a);<span class="comment">//1,2</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (a <span class="keyword">of</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a);<span class="comment">//a,b</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>For In遍历对象的键 For of (ES6)遍历对象的值  —&gt;  也可用于数组的遍历(不如用forEach)</em></strong></p>
+</li>
+</ul>
+</li>
+<li><p><strong>总结</strong></p>
+<ul>
+<li><strong>数组 : </strong><ul>
+<li>1.ForEach可以满足大部分应用场景,不过会改变原数组的值!</li>
+<li>2.Map,Reduce,Filter不会改变原数组的值.会通过return的值形成一个新的数组.</li>
+<li>3.当需求简单且不能改变源数组的值,用Map就可以实现需求.</li>
+<li>4.需求复杂,需要递归时可以使用Reduce.</li>
+<li>5.Filter就是单纯的过滤器.</li>
+</ul>
+</li>
+<li><strong>对象 :</strong><ul>
+<li>1.遍历对象使用ES6新特性,For of 可以更加直观的看到对象每个属性的值.</li>
+</ul>
+</li>
+</ul>
+</li>
 </ol>
 
       
@@ -249,7 +292,7 @@
     <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/28/01_vue element ui表单修改子组件绑定值思路/" alt="微信分享二维码">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/09/07/02_JavaScript各种循环对比/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -263,18 +306,9 @@
   
 <nav id="article-nav">
   
-    <a href="/2017/09/07/02_JavaScript各种循环对比/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          (no title)
-        
-      </div>
-    </a>
   
-  
-    <a href="/2017/07/08/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMAScript 6 知识总结</div>
+    <a href="/2017/08/28/01_vue element ui表单修改子组件绑定值思路/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
       <i class="icon-circle-right"></i>
     </a>
   
