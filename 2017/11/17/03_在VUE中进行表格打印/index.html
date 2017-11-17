@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936080-c100d8d0-cbad-11e7-8c1a-ca1b3e214908.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936364-f66f0ed2-cbae-11e7-8fcf-e0e1c1dd6266.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936454-409c954c-cbaf-11e7-9ad6-3067e86ac692.png">
-<meta property="og:updated_time" content="2017-11-17T08:13:33.848Z">
+<meta property="og:updated_time" content="2017-11-17T08:17:03.649Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在VUE中进行日志表打印">
 <meta name="twitter:description" content="现有一个后台管理系统是用VUE实现的,现在要添加日志打印的功能。搜了一些教程,有用到jqPrint的和原生调用的,使用的时候都会出现问题,打印区域不好设置,打印完毕后vue项目路由失效结合了网上的教程,终于有了解决方案  1.网友打印的思路基本都是使用document.getElementById的方式获取DOM,然后进行使用jqPrint打印,和window.print(),这个方式在传统的J">
@@ -188,7 +188,12 @@
 <li><strong>测试之后页面的路由就会失效,所有使用vue绑定的事件也无法触发.</strong></li>
 <li>只有重新刷新才能生效。在打印后加和定时器写上location.reload()可以自动刷新。</li>
 </ul>
-<p>2.<strong>刷新以后发现打印部分叠加到页面上了,因为打印获取的DOM节点依然存在于vue单页面的App中。</strong><br>    -<br>    1.那就在vue项目的index.html多加一个div,专门存储打印内容,这样就不会冲突。<br>    <img src="https://user-images.githubusercontent.com/23348422/32935386-e91e28de-cbaa-11e7-9e55-a1950b5eb974.png" alt="image"><br>    <a id="more"></a><br>    -<br>    2.构建日志表的界面<br>       <img src="https://user-images.githubusercontent.com/23348422/32935868-ecf9f3a0-cbac-11e7-936e-b1e150c2dfac.png" alt="image"><br>       <img src="https://user-images.githubusercontent.com/23348422/32935784-8c6b3fd0-cbac-11e7-96ae-6a38c708bc65.png" alt="image"><br>     -<br>    3.在打印页可以通过document.getElementById获取到打印区域。并调用浏览器的打印功能。<br>       <img src="https://user-images.githubusercontent.com/23348422/32936080-c100d8d0-cbad-11e7-8c1a-ca1b3e214908.png" alt="image"></p>
+<p>2.<strong>刷新以后发现打印部分叠加到页面上了,因为打印获取的DOM节点依然存在于vue单页面的App中。</strong></p>
+<ul>
+<li>那就在vue项目的index.html多加一个div,专门存储打印内容,这样就不会冲突。<br><img src="https://user-images.githubusercontent.com/23348422/32935386-e91e28de-cbaa-11e7-9e55-a1950b5eb974.png" alt="image"><a id="more"></a></li>
+<li>构建日志表的界面<br> <img src="https://user-images.githubusercontent.com/23348422/32935868-ecf9f3a0-cbac-11e7-936e-b1e150c2dfac.png" alt="image"><br> <img src="https://user-images.githubusercontent.com/23348422/32935784-8c6b3fd0-cbac-11e7-96ae-6a38c708bc65.png" alt="image">  </li>
+<li>在打印页可以通过document.getElementById获取到打印区域。并调用浏览器的打印功能。<br> <img src="https://user-images.githubusercontent.com/23348422/32936080-c100d8d0-cbad-11e7-8c1a-ca1b3e214908.png" alt="image"></li>
+</ul>
 <p>3.<strong>如果不想打印完刷新的话就新建一个打印窗口,将值传入新窗口中,现在已经实现功能了。</strong></p>
 <p>​    <img src="https://user-images.githubusercontent.com/23348422/32936364-f66f0ed2-cbae-11e7-8fcf-e0e1c1dd6266.png" alt="image"><br>    <img src="https://user-images.githubusercontent.com/23348422/32936454-409c954c-cbaf-11e7-9ad6-3067e86ac692.png" alt="image"></p>
 <hr>
