@@ -20,7 +20,7 @@
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936080-c100d8d0-cbad-11e7-8c1a-ca1b3e214908.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936364-f66f0ed2-cbae-11e7-8fcf-e0e1c1dd6266.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936454-409c954c-cbaf-11e7-9ad6-3067e86ac692.png">
-<meta property="og:updated_time" content="2017-11-17T08:01:10.000Z">
+<meta property="og:updated_time" content="2017-11-17T08:03:47.233Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="在VUE中进行日志表打印">
 <meta name="twitter:description" content="现有一个后台管理系统是用VUE实现的,现在要添加日志打印的功能。搜了一些教程,有用到jqPrint的和原生调用的,使用的时候都会出现问题,打印区域不好设置,打印完毕后vue项目路由失效结合了网上的教程,终于有了解决方案  1.网友打印的思路基本都是使用document.getElementById的方式获取DOM,然后进行使用jqPrint打印,和window.print(),这个方式在传统的J">
@@ -190,8 +190,8 @@
 </ul>
 <p>2.<strong>刷新以后发现打印部分叠加到页面上了,因为打印获取的DOM节点依然存在于vue单页面的App中。</strong></p>
 <ol>
-<li><p>那就在vue项目的index.html多加一个div,专门存储打印内容,这样就不会冲突。<br> <img src="https://user-images.githubusercontent.com/23348422/32935386-e91e28de-cbaa-11e7-9e55-a1950b5eb974.png" alt="image"></p>
- <a id="more"></a>
+<li><p>那就在vue项目的index.html多加一个div,专门存储打印内容,这样就不会冲突。<br><img src="https://user-images.githubusercontent.com/23348422/32935386-e91e28de-cbaa-11e7-9e55-a1950b5eb974.png" alt="image"></p>
+<a id="more"></a>
 </li>
 <li><p>构建日志表的界面</p>
 <p> <img src="https://user-images.githubusercontent.com/23348422/32935868-ecf9f3a0-cbac-11e7-936e-b1e150c2dfac.png" alt="image"><br> <img src="https://user-images.githubusercontent.com/23348422/32935784-8c6b3fd0-cbac-11e7-96ae-6a38c708bc65.png" alt="image">  </p>
@@ -201,7 +201,7 @@
 </li>
 </ol>
 <p>3.<strong>如果不想打印完刷新的话就新建一个打印窗口,将值传入新窗口中,现在已经实现功能了。</strong></p>
-<p>​    <img src="https://user-images.githubusercontent.com/23348422/32936364-f66f0ed2-cbae-11e7-8fcf-e0e1c1dd6266.png" alt="image"><br><img src="https://user-images.githubusercontent.com/23348422/32936454-409c954c-cbaf-11e7-9ad6-3067e86ac692.png" alt="image"></p>
+<p>​    <img src="https://user-images.githubusercontent.com/23348422/32936364-f66f0ed2-cbae-11e7-8fcf-e0e1c1dd6266.png" alt="image"><br>    <img src="https://user-images.githubusercontent.com/23348422/32936454-409c954c-cbaf-11e7-9ad6-3067e86ac692.png" alt="image"></p>
 <hr>
 <p>�������ӣ�<a href="http://yoursite.com/2017/11/17/03_在VUE中进行表格打印/">http://yoursite.com/2017/11/17/03_在VUE中进行表格打印/</a></p>
 
