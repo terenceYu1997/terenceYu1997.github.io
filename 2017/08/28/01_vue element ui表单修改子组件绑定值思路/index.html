@@ -16,7 +16,7 @@
 <meta property="og:description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png">
 <meta property="og:image" content="https://user-images.githubusercontent.com/23348422/29757510-eca88f50-8bde-11e7-8ffe-8c9b48e00389.png">
-<meta property="og:updated_time" content="2017-08-28T03:05:07.436Z">
+<meta property="og:updated_time" content="2017-08-28T03:05:07.435Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
 <meta name="twitter:description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
@@ -156,142 +156,86 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-01_vue element ui表单修改子组件绑定值思路" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <h2 id="Element-ui-修改表单绑定props值"><a href="#Element-ui-修改表单绑定props值" class="headerlink" title="Element ui 修改表单绑定props值"></a>Element ui 修改表单绑定props值</h2><ol>
-<li><strong>业务需求</strong> : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示.</li>
-<li><p><strong>实现</strong>: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.</p>
-<p><img src="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png" alt="image"></p>
-</li>
-<li><p><strong>问题</strong> : 由于管辖公司的值是通过props从父组件获取(父组件通过v-bind传值给子组件),子组件管辖公司所v-model的值是直接与父组件的值关联的,子组件并不能直接改变父组件的值.</p>
-<a id="more"></a></li>
-<li><strong>解决思路</strong> : 子组件表单(修改用户) 依旧通过props的editData获取父组件的值,在子组件created/watch的时候,在data中声明变量tempTreeObj. 将editData的treeCodesObj赋值给在data中声明变量tempTreeObj.<br>这样就可以修改子组件将editData的treeCodesObj赋值给在data中声明变量tempTreeObj值.<br><img src="https://user-images.githubusercontent.com/23348422/29757510-eca88f50-8bde-11e7-8ffe-8c9b48e00389.png" alt="image"></li>
-</ol>
-
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
+            
+<!-- css -->
+  <style type="text/css">
+      .center {
+          text-align: center;
+      }
+      .hidden {
+          display: none;
+      }
+    .donate_bar a.btn_donate{
+      display: inline-block;
+      width: 82px;
+      height: 82px;
+      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
+      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
+           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
+         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
+         嵌入其它博客时不一定要它们。 -->
+      -webkit-transition: background 0s;
+      -moz-transition: background 0s;
+      -o-transition: background 0s;
+      -ms-transition: background 0s;
+      transition: background 0s;
+      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
+    }
+    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
+    .donate_bar .donate_txt {
+      display: block;
+      color: #9d9d9d;
+      font: 14px/2 "Microsoft Yahei";
+    }
+    .bold{ font-weight: bold; }
+  </style>
+<!-- /css -->
+<!-- Donate Module -->
+  <div id="donate_module">
+  <!-- btn_donate & tips -->
+    <div id="donate_board" class="donate_bar center">      
+    <br>
+    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
+    <span class="donate_txt">
+      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+    </span>    
     </div>
-    <div class="article-info article-info-index">
-      
-      
-      
-
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
+  <!-- /btn_donate & tips -->
+  <!-- donate guide -->
+    <div id="donate_guide" class="donate_bar center hidden">
+    <br>
+      <a href="./weixin.JPG" title="用微信扫一扫哦~" class="fancybox" rel="article0">
+        <img src="./weixin.JPG" title="微信打赏 Delia" height="190px" width="auto"/>
+      </a>&nbsp;&nbsp;
+      <a href="./zhifubao.JPG" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
+        <img src="./zhifubao.JPG" title="支付宝打赏 Delia" height="190px" width="auto"/>
       </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
-        </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/08/28/01_vue element ui表单修改子组件绑定值思路/" alt="微信分享二维码">
+      <span class="donate_txt">
+        Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
+      </span>
     </div>
+  <!-- /donate guide -->
+<!-- donate script -->
+  <script type="text/javascript">
+    document.getElementById('btn_donate').onclick = function() {
+      $('#donate_board').addClass('hidden');
+      $('#donate_guide').removeClass('hidden');
+    }
+    function donate_on_web(){
+      $('#donate').submit();
+        }
+    var original_window_onload = window.onload;
+        window.onload = function () {
+            if (original_window_onload) {
+                original_window_onload();
+            }
+            //document.getElementById('donate_board_wdg').className = 'hidden';
+    }
+  </script>
+<!-- /donate script -->
 </div>
-
-<div class="mask js-mask"></div>
-      
-      <div class="clearfix"></div>
-    </div>
-  </div>
-</article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2017/09/07/02_JavaScript各种循环对比/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          JavaScript各种循环对比
-        
-      </div>
-    </a>
-  
-  
-    <a href="/2017/07/08/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">ECMAScript 6 知识总结</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-
-
-
-  
-  
-  
-
-  
-
-  
-
+<!-- /Donate Module -->
 
           </div>
         </div>
