@@ -162,86 +162,206 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-<!-- css -->
-  <style type="text/css">
-      .center {
-          text-align: center;
-      }
-      .hidden {
-          display: none;
-      }
-    .donate_bar a.btn_donate{
-      display: inline-block;
-      width: 82px;
-      height: 82px;
-      background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-      _background: url("http://7xsl28.com1.z0.glb.clouddn.com/btn_reward.gif") no-repeat;
-      <!-- http://img.t.sinajs.cn/t5/style/images/apps_PRF/e_media/btn_reward.gif
-           因为本 hexo 生成的博客所用的 theme 的 a:hover 带动画效果，
-         为了在让打赏按钮显示效果正常 而 添加了以下几行 css，
-         嵌入其它博客时不一定要它们。 -->
-      -webkit-transition: background 0s;
-      -moz-transition: background 0s;
-      -o-transition: background 0s;
-      -ms-transition: background 0s;
-      transition: background 0s;
-      <!-- /让打赏按钮的效果显示正常 而 添加的几行 css 到此结束 -->
-    }
-    .donate_bar a.btn_donate:hover{ background-position: 0px -82px;}
-    .donate_bar .donate_txt {
-      display: block;
-      color: #9d9d9d;
-      font: 14px/2 "Microsoft Yahei";
-    }
-    .bold{ font-weight: bold; }
-  </style>
-<!-- /css -->
-<!-- Donate Module -->
-  <div id="donate_module">
-  <!-- btn_donate & tips -->
-    <div id="donate_board" class="donate_bar center">      
-    <br>
-    <a id="btn_donate" class="btn_donate" target="_self" href="javascript:;" title="Donate 打赏"></a>
-    <span class="donate_txt">
-      Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-    </span>    
+            <article id="post-00_ECMAScript 6 知识总结(一、ES6与ES5的对比)" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      ECMAScript 6 知识总结
+    </h1>
+  
+
+        
+        <a href="/2017/07/08/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" class="archive-article-date">
+  	<time datetime="2017-07-08T07:15:43.906Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2017-07-08</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="一、ES6改良ES5的缺陷"><a href="#一、ES6改良ES5的缺陷" class="headerlink" title="一、ES6改良ES5的缺陷"></a>一、ES6改良ES5的缺陷</h2><ol>
+<li><h3 id="ES6新增块级作用域"><a href="#ES6新增块级作用域" class="headerlink" title="ES6新增块级作用域"></a><strong>ES6新增块级作用域</strong></h3><blockquote>
+<p><strong>在块级作用域内声明的变量不会被外层所引用,也就是说不需要ES5通过(函数)闭包来解决全局变量污染的问题. </strong></p>
+</blockquote>
+<ul>
+<li><p><strong>防止变量在块级作用域外被访问</strong>.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/23348422/26404241/bb1a54f2-40c3-11e7-815c-425a64add200.png" alt="image"></p>
+<a id="more"></a></li>
+<li><p><strong>let/cont防止变量重声明.重复声明会报错</strong>.</p>
+<p><img src="https://cloud.githubusercontent.com/assets/23348422/26404211/976bb190-40c3-11e7-8949-2293f2844ba2.png" alt="image"></p>
+</li>
+<li><p><strong>不需要ES5闭包来解决变量污染的问题</strong></p>
+<p><img src="https://cloud.githubusercontent.com/assets/23348422/26404131/5a221c0c-40c3-11e7-92b8-a67271cced5d.png" alt="image"></p>
+</li>
+<li><p><strong>ES5中循环体的闭包会访问全局的 i ,而使用let 声明的循环体会将本次循环变量锁在块级作用域内!</strong></p>
+<p><img src="https://cloud.githubusercontent.com/assets/23348422/26403993/f0801844-40c2-11e7-964e-d37ca6babfed.png" alt="image"></p>
+<p>​</p>
+<p>​</p>
+</li>
+</ul>
+</li>
+<li><h3 id="箭头函数代替词法作用域的”this”"><a href="#箭头函数代替词法作用域的”this”" class="headerlink" title="箭头函数代替词法作用域的”this”"></a><strong>箭头函数</strong>代替词法作用域的”this”</h3><blockquote>
+<p><strong>在ES5中,”this”会随着函数调用位置(全局/闭包),和函数调用方式(构造/普通)改变,ES6箭头函数中的”this”总是指向声明时的哪个对象</strong></p>
+</blockquote>
+<ol>
+<li><p>在下图中，我们希望打印一个用户的名字和薪水。假设我们从服务器异步获取薪水数据。注意到当服务器返回结果时，函数里的 “this” 是 “window” 而不是 “person”。<img src="https://cloud.githubusercontent.com/assets/23348422/26404831/d7694cce-40c5-11e7-9a12-eb10e2c3d675.png" alt="image"></p>
+<p>​</p>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><h3 id="处理”arguments”"><a href="#处理”arguments”" class="headerlink" title="处理”arguments”"></a><strong>处理”arguments”</strong></h3><blockquote>
+<p>​    <strong>在ES5中,  arguments是一个伪数组,可以使用length来遍历他,但却不能使用完全Array的api(slice/sort).</strong><br><strong>在ES6中,可以使用新特性叫做rest参数,他的形式为 …参数名,比如<code>...args</code>,rest是一个真数组,所以至此Array所有api调用.</strong></p>
+</blockquote>
+<ol>
+<li><p><img src="https://cloud.githubusercontent.com/assets/23348422/26405764/e7735cc4-40c8-11e7-8868-641ba3aed7fc.png" alt="image"><br><img src="https://cloud.githubusercontent.com/assets/23348422/26405807/03592996-40c9-11e7-836e-6ba80374fde8.png" alt="image"></p>
+<p>​</p>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><h3 id="类"><a href="#类" class="headerlink" title="类"></a><strong>类</strong></h3><blockquote>
+<p><strong>从概念上讲，在 ES6 之前的 JS 中并没有和其他面向对象语言那样的“类”的概念。长时间里，人们把使用 new 关键字调用的函数（也叫构造器）当做“类”来使用。        <em>通过原型链混乱继承(不方便)</em> </strong></p>
+</blockquote>
+<ol>
+<li><p>对比ES5与ES6中实现类<br><img src="https://cloud.githubusercontent.com/assets/23348422/26406027/a329b8aa-40c9-11e7-9cfd-47c000534870.png" alt="image"></p>
+<p>​</p>
+</li>
+</ol>
+</li>
+<li><h3 id="严格模式"><a href="#严格模式" class="headerlink" title="严格模式"></a>严格模式</h3><blockquote>
+<p><strong>“use strice”,</strong>在 ES5 中, 严格模式是可选项，但是在 ES6 中，<a href="http://www.ecma-international.org/ecma-262/6.0/#sec-strict-mode-code" target="_blank" rel="external">许多特性要求必须使用严格模式</a>。 因此大多数开发者和 babel 之类的工具默认添加 <code>use strict</code> 到 JS 文件的头部，以确保整个 JS 文件的代码都采用严格模式，这个习惯有助于我们写更好的 JavaScript.**</p>
+</blockquote>
+</li>
+</ol>
+<p>参考链接:<a href="https://75team.com/post/5-javascript-%E2%80%9Cbad%E2%80%9D-parts-that-are-fixed-in-es6.html" target="_blank" rel="external">https://75team.com/post/5-javascript-%E2%80%9Cbad%E2%80%9D-parts-that-are-fixed-in-es6.html</a></p>
+<hr>
+<p>�������ӣ�<a href="http://yoursite.com/2017/07/08/00_ECMAScript">http://yoursite.com/2017/07/08/00_ECMAScript</a> 6 知识总结(一、ES6与ES5的对比)/</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
     </div>
-  <!-- /btn_donate & tips -->
-  <!-- donate guide -->
-    <div id="donate_guide" class="donate_bar center hidden">
-    <br>
-      <a href="./weixin.JPG" title="用微信扫一扫哦~" class="fancybox" rel="article0">
-        <img src="./weixin.JPG" title="微信打赏 Delia" height="190px" width="auto"/>
-      </a>&nbsp;&nbsp;
-      <a href="./zhifubao.JPG" title="用支付宝扫一扫即可~" class="fancybox" rel="article0">
-        <img src="./zhifubao.JPG" title="支付宝打赏 Delia" height="190px" width="auto"/>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
       </a>
-      <span class="donate_txt">
-        Enjoy it ? Donate me !  欣赏此文？求鼓励，求支持！
-      </span>
-    </div>
-  <!-- /donate guide -->
-<!-- donate script -->
-  <script type="text/javascript">
-    document.getElementById('btn_donate').onclick = function() {
-      $('#donate_board').addClass('hidden');
-      $('#donate_guide').removeClass('hidden');
-    }
-    function donate_on_web(){
-      $('#donate').submit();
-        }
-    var original_window_onload = window.onload;
-        window.onload = function () {
-            if (original_window_onload) {
-                original_window_onload();
-            }
-            //document.getElementById('donate_board_wdg').className = 'hidden';
-    }
-  </script>
-<!-- /donate script -->
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
 </div>
-<!-- /Donate Module -->
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2017/07/08/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
+  </div>
+</article>
+
+  
+<nav id="article-nav">
+  
+    <a href="/2017/08/28/01_vue element ui表单修改子组件绑定值思路/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          (no title)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2017/06/11/hello-world/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">Hello World</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
+  
+
+  
+
+  
+
 
           </div>
         </div>
