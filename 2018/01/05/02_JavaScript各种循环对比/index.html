@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>JavaScript各种循环对比 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]    1.数组遍历  普通For循环 1234for (var i = 100; i &amp;gt; 0 ; i--)&amp;#123;  console.log(i);&amp;#125; 写法冗余,适合初学者,通过调试可以直观的看到循环的流程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="JavaScript各种循环对比">
+<meta property="og:url" content="http://yoursite.com/2018/01/05/02_JavaScript各种循环对比/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]    1.数组遍历  普通For循环 1234for (var i = 100; i &amp;gt; 0 ; i--)&amp;#123;  console.log(i);&amp;#125; 写法冗余,适合初学者,通过调试可以直观的看到循环的流程">
+<meta property="og:updated_time" content="2017-11-17T05:39:12.268Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="JavaScript各种循环对比">
+<meta name="twitter:description" content="数组 : For / ForEach / Map /Reduce /Filter 对象 : For In / For of(ES6) / testObj[‘name’]    1.数组遍历  普通For循环 1234for (var i = 100; i &amp;gt; 0 ; i--)&amp;#123;  console.log(i);&amp;#125; 写法冗余,适合初学者,通过调试可以直观的看到循环的流程">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,154 +153,197 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-02_JavaScript各种循环对比" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/hello-world/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.265Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      JavaScript各种循环对比
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/03_在VUE中进行表格打印/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.261Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/03_在VUE中进行表格打印/">在VUE中进行日志表打印</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/02_JavaScript各种循环对比/" class="archive-article-date">
+        
+        <a href="/2018/01/05/02_JavaScript各种循环对比/" class="archive-article-date">
   	<time datetime="2018-01-05T01:32:06.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/02_JavaScript各种循环对比/">JavaScript各种循环对比</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>数组 : For / ForEach / Map /Reduce /Filter </strong><br><strong>对象 : For In / For of(ES6) / testObj[‘name’]</strong>  </p>
+</blockquote>
+<p>1.<strong>数组遍历</strong></p>
+<ul>
+<li><p>普通For循环</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">100</span>; i &gt; <span class="number">0</span> ; i--)</div><div class="line">&#123;</div><div class="line">  <span class="built_in">console</span>.log(i);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>写法冗余,适合初学者,通过调试可以直观的看到循环的流程</em></strong></p>
+</li>
+<li><p>ForEach</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ary = [<span class="number">12</span>,<span class="number">23</span>,<span class="number">24</span>,<span class="number">42</span>,<span class="number">1</span>];</div><div class="line"><span class="keyword">var</span> res = ary.forEach(<span class="function"><span class="keyword">function</span> (<span class="params">item,index,input</span>) </span>&#123;</div><div class="line">  <span class="built_in">console</span>.log(item)</div><div class="line">  <span class="built_in">console</span>.log(index)</div><div class="line">  <span class="built_in">console</span>.log(input)</div><div class="line">  input[index] = item*<span class="number">10</span>;</div><div class="line">&#125;)</div><div class="line"><span class="built_in">console</span>.log(res);<span class="comment">//--&gt;undefined;</span></div><div class="line"><span class="built_in">console</span>.log(ary);<span class="comment">//--&gt;会对原来的数组产生改变；</span></div></pre></td></tr></table></figure>
+<p><strong><em>用来代替for循环,写法更简洁</em></strong></p>
+<a id="more"></a></li>
+<li><p>Map</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//不使用Map</span></div><div class="line"><span class="keyword">var</span> oldArr = [&#123;<span class="attr">first_name</span>:<span class="string">"Colin"</span>,<span class="attr">last_name</span>:<span class="string">"Toh"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Addy"</span>,<span class="attr">last_name</span>:<span class="string">"Osmani"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Yehuda"</span>,<span class="attr">last_name</span>:<span class="string">"Katz"</span>&#125;];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewArr</span>(<span class="params"></span>)</span>&#123;</div><div class="line"></div><div class="line">  <span class="keyword">var</span> newArr = [];</div><div class="line"></div><div class="line">  <span class="keyword">for</span>(<span class="keyword">var</span> i= <span class="number">0</span>, l = oldArr.length; i&lt; l; i++)&#123;</div><div class="line">    <span class="keyword">var</span> item = oldArr[i];</div><div class="line">    item.full_name = [item.first_name,item.last_name].join(<span class="string">" "</span>);</div><div class="line">    newArr[i] = item;</div><div class="line">  &#125;</div><div class="line"></div><div class="line">  <span class="keyword">return</span> newArr;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line"><span class="comment">//使用Map</span></div><div class="line"><span class="keyword">var</span> oldArr = [&#123;<span class="attr">first_name</span>:<span class="string">"Colin"</span>,<span class="attr">last_name</span>:<span class="string">"Toh"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Addy"</span>,<span class="attr">last_name</span>:<span class="string">"Osmani"</span>&#125;,&#123;<span class="attr">first_name</span>:<span class="string">"Yehuda"</span>,<span class="attr">last_name</span>:<span class="string">"Katz"</span>&#125;];</div><div class="line"> </div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNewArr</span>(<span class="params"></span>)</span>&#123;</div><div class="line">     </div><div class="line">  <span class="keyword">return</span> oldArr.map(<span class="function"><span class="keyword">function</span>(<span class="params">item,index</span>)</span>&#123;</div><div class="line">    item.full_name = [item.first_name,item.last_name].join(<span class="string">" "</span>);</div><div class="line">    <span class="keyword">return</span> item;</div><div class="line">  &#125;);</div><div class="line">   </div><div class="line">&#125;</div><div class="line"> </div><div class="line"><span class="built_in">console</span>.log(getNewArr());</div></pre></td></tr></table></figure>
+<p><strong><em>Map使用方法与forEach相同,不过不会修改原数组的值,遍历后返回的值会拼成一个新的数组。只需要声明一个变量来接收这个数组就可以</em></strong></p>
+</li>
+<li><p>Reduce</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">passValue</span>(<span class="params"></span>)</span>&#123;</div><div class="line">  <span class="keyword">return</span> arr.reduce(<span class="function"><span class="keyword">function</span>(<span class="params">total,currentValue,currentIndex,arr</span>)</span>&#123;</div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"prev:"</span>,total);<span class="comment">//所有计算后的值</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"next:"</span>,currentValue);<span class="comment">//当前循环到的值</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"next:"</span>,currentIndex);<span class="comment">//当前循环index</span></div><div class="line">    <span class="built_in">console</span>.log(<span class="string">"next:"</span>,arr);<span class="comment">//当前循环 源 数组</span></div><div class="line"></div><div class="line">    total[currentValue] = <span class="number">1</span>;</div><div class="line">    <span class="comment">//currentValue是当前循环到的值,让这个值做对象的键,并给他复制为1</span></div><div class="line">    <span class="keyword">return</span> total;</div><div class="line">  &#125;,&#123;<span class="attr">name</span>:<span class="string">'呵呵'</span>&#125;);</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">var</span> newObject = passValue()</div><div class="line"><span class="built_in">console</span>.log(newObject)</div></pre></td></tr></table></figure>
+<p><strong><em>Reduce外层是普通的for循环,回调函数里面所用到的total使用的是递归方法,可以存储所有计算的总和</em></strong></p>
+</li>
+<li><p>Filter </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> ages = [<span class="number">32</span>, <span class="number">33</span>, <span class="number">16</span>, <span class="number">40</span>];</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">checkAdult</span>(<span class="params">age,currentIndex,arr</span>) </span>&#123;</div><div class="line">    <span class="keyword">return</span> age &gt;= <span class="number">18</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</div><div class="line">    <span class="built_in">document</span>.getElementById(<span class="string">"demo"</span>).innerHTML = ages.filter(checkAdult);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>Filter比ForEach更为简洁,不改变原数组的值,筛选元素更加方便。</em></strong></p>
+</li>
+</ul>
+<p>2.<strong>对象遍历</strong></p>
+<ul>
+<li><p>For In / For of</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">let</span> arr = [<span class="string">"a"</span>,<span class="string">"b"</span>];</div><div class="line"><span class="keyword">for</span> (a <span class="keyword">in</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a);<span class="comment">//1,2</span></div><div class="line">&#125;</div><div class="line"></div><div class="line"><span class="keyword">for</span> (a <span class="keyword">of</span> arr) &#123;</div><div class="line">  <span class="built_in">console</span>.log(a);<span class="comment">//a,b</span></div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>For In遍历对象的键 For of (ES6)遍历对象的值  —&gt;  也可用于数组的遍历(不如用forEach)</em></strong></p>
+</li>
+</ul>
+<p>3.<strong>总结</strong></p>
+<ul>
+<li><strong>数组 : </strong><ul>
+<li>1.ForEach可以满足大部分应用场景,不过会改变原数组的值!</li>
+<li>2.Map,Reduce,Filter不会改变原数组的值.会通过return的值形成一个新的数组.</li>
+<li>3.当需求简单且不能改变源数组的值,用Map就可以实现需求.</li>
+<li>4.需求复杂,需要递归时可以使用Reduce.</li>
+<li>5.Filter就是单纯的过滤器.</li>
+</ul>
+</li>
+<li><strong>对象 :</strong><ul>
+<li>1.遍历对象使用ES6新特性,For of 可以更加直观的看到对象每个属性的值.</li>
+</ul>
+</li>
+</ul>
+<hr>
+<p>�������ӣ�<a href="http://yoursite.com/2018/01/05/02_JavaScript各种循环对比/">http://yoursite.com/2018/01/05/02_JavaScript各种循环对比/</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/05/02_JavaScript各种循环对比/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/01_vue element ui表单修改子组件绑定值思路/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
 
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.244Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/">ECMAScript 6 知识总结</a>
-    </h1>
+    <a href="/2018/01/05/03_在VUE中进行表格打印/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          在VUE中进行日志表打印
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/05/01_vue element ui表单修改子组件绑定值思路/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title"></div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -320,8 +367,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

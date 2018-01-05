@@ -6,14 +6,25 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>在VUE中进行日志表打印 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="现有一个后台管理系统是用VUE实现的,现在要添加日志打印的功能。搜了一些教程,有用到jqPrint的和原生调用的,使用的时候都会出现问题,打印区域不好设置,打印完毕后vue项目路由失效结合了网上的教程,终于有了解决方案  1.网友打印的思路基本都是使用document.getElementById的方式获取DOM,然后进行使用jqPrint打印,和window.print(),这个方式在传统的J">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在VUE中进行日志表打印">
+<meta property="og:url" content="http://yoursite.com/2018/01/05/03_在VUE中进行表格打印/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="现有一个后台管理系统是用VUE实现的,现在要添加日志打印的功能。搜了一些教程,有用到jqPrint的和原生调用的,使用的时候都会出现问题,打印区域不好设置,打印完毕后vue项目路由失效结合了网上的教程,终于有了解决方案  1.网友打印的思路基本都是使用document.getElementById的方式获取DOM,然后进行使用jqPrint打印,和window.print(),这个方式在传统的J">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32935386-e91e28de-cbaa-11e7-9e55-a1950b5eb974.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32935868-ecf9f3a0-cbac-11e7-936e-b1e150c2dfac.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32935784-8c6b3fd0-cbac-11e7-96ae-6a38c708bc65.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936080-c100d8d0-cbad-11e7-8c1a-ca1b3e214908.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936364-f66f0ed2-cbae-11e7-8fcf-e0e1c1dd6266.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/32936454-409c954c-cbaf-11e7-9ad6-3067e86ac692.png">
+<meta property="og:updated_time" content="2017-11-17T08:25:25.012Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="在VUE中进行日志表打印">
+<meta name="twitter:description" content="现有一个后台管理系统是用VUE实现的,现在要添加日志打印的功能。搜了一些教程,有用到jqPrint的和原生调用的,使用的时候都会出现问题,打印区域不好设置,打印完毕后vue项目路由失效结合了网上的教程,终于有了解决方案  1.网友打印的思路基本都是使用document.getElementById的方式获取DOM,然后进行使用jqPrint打印,和window.print(),这个方式在传统的J">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/23348422/32935386-e91e28de-cbaa-11e7-9e55-a1950b5eb974.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,154 +160,168 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-03_在VUE中进行表格打印" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/hello-world/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.265Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/hello-world/">Hello World</a>
+    <h1 class="article-title" itemprop="name">
+      在VUE中进行日志表打印
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/03_在VUE中进行表格打印/" class="archive-article-date">
+        
+        <a href="/2018/01/05/03_在VUE中进行表格打印/" class="archive-article-date">
   	<time datetime="2018-01-05T01:32:06.261Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
 </a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/03_在VUE中进行表格打印/">在VUE中进行日志表打印</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <blockquote>
+<p><strong>现有一个后台管理系统是用VUE实现的,现在要添加日志打印的功能。</strong><br><strong>搜了一些教程,有用到jqPrint的和原生调用的,使用的时候都会出现问题,打印区域不好设置,打印完毕后vue项目路由失效</strong><br><strong>结合了网上的教程,终于有了解决方案</strong></p>
+</blockquote>
+<p>1.<strong>网友打印的思路基本都是使用document.getElementById的方式获取DOM,然后进行使用jqPrint打印,和window.print(),这个方式在传统的JQuery网站中是可以实现打印功能的,但是VUE是单页面应用,实际上所有内容都包含在一个ID为App的div中。</strong></p>
+<ul>
+<li><strong>测试之后页面的路由就会失效,所有使用vue绑定的事件也无法触发.</strong></li>
+<li>只有重新刷新才能生效。在打印后加和定时器写上location.reload()可以自动刷新。</li>
+</ul>
+<p>2.<strong>刷新以后发现打印部分叠加到页面上了,因为打印获取的DOM节点依然存在于vue单页面的App中。</strong></p>
+<ul>
+<li><p>那就在vue项目的index.html多加一个div,专门存储打印内容,这样就不会冲突。<br><img src="https://user-images.githubusercontent.com/23348422/32935386-e91e28de-cbaa-11e7-9e55-a1950b5eb974.png" alt="image"></p>
+  <a id="more"></a>
+</li>
+<li><p>构建日志表的界面<br>  <img src="https://user-images.githubusercontent.com/23348422/32935868-ecf9f3a0-cbac-11e7-936e-b1e150c2dfac.png" alt="image"><br>  <img src="https://user-images.githubusercontent.com/23348422/32935784-8c6b3fd0-cbac-11e7-96ae-6a38c708bc65.png" alt="image">  </p>
+</li>
+<li><p>在打印页可以通过document.getElementById获取到打印区域。并调用浏览器的打印功能。<br>  <img src="https://user-images.githubusercontent.com/23348422/32936080-c100d8d0-cbad-11e7-8c1a-ca1b3e214908.png" alt="image"></p>
+</li>
+</ul>
+<p>3.<strong>如果不想打印完刷新的话就新建一个打印窗口,将值传入新窗口中,现在已经实现功能了。</strong></p>
+<p>​    <img src="https://user-images.githubusercontent.com/23348422/32936364-f66f0ed2-cbae-11e7-8fcf-e0e1c1dd6266.png" alt="image"><br>    <img src="https://user-images.githubusercontent.com/23348422/32936454-409c954c-cbaf-11e7-9ad6-3067e86ac692.png" alt="image"></p>
+<hr>
+<p>�������ӣ�<a href="http://yoursite.com/2018/01/05/03_在VUE中进行表格打印/">http://yoursite.com/2018/01/05/03_在VUE中进行表格打印/</a></p>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
+      
+
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
+        </div>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/05/03_在VUE中进行表格打印/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/02_JavaScript各种循环对比/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/02_JavaScript各种循环对比/">JavaScript各种循环对比</a>
-    </h1>
+    <a href="/2018/01/05/hello-world/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Hello World
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/05/02_JavaScript各种循环对比/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">JavaScript各种循环对比</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/01_vue element ui表单修改子组件绑定值思路/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.244Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/">ECMAScript 6 知识总结</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -320,8 +345,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

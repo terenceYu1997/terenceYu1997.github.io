@@ -6,14 +6,21 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
+  <meta name="description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
+<meta property="og:type" content="article">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+<meta property="og:url" content="http://yoursite.com/2018/01/05/01_vue element ui表单修改子组件绑定值思路/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/29757510-eca88f50-8bde-11e7-8ffe-8c9b48e00389.png">
+<meta property="og:updated_time" content="2017-08-28T03:05:07.436Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo">
+<meta name="twitter:description" content="Element ui 修改表单绑定props值 业务需求 : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示. 实现: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.   问题 : 由于管辖公司的值是通过props从父组件获取(父组件通过v-">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,154 +156,142 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-01_vue element ui表单修改子组件绑定值思路" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Element-ui-修改表单绑定props值"><a href="#Element-ui-修改表单绑定props值" class="headerlink" title="Element ui 修改表单绑定props值"></a>Element ui 修改表单绑定props值</h2><ol>
+<li><strong>业务需求</strong> : 父组件发送ajax,获取管理员用户信息.  子组件通过props的editData值绑定到表单上,并显示.</li>
+<li><p><strong>实现</strong>: 子组件表单需要显示管理员所管辖公司, 使用element ui的select选择器组件,select组件有multiple属性,表示下拉菜单多选.</p>
+<p><img src="https://user-images.githubusercontent.com/23348422/29757267-31241ef8-8bdd-11e7-93d9-61daa408115f.png" alt="image"></p>
+</li>
+<li><p><strong>问题</strong> : 由于管辖公司的值是通过props从父组件获取(父组件通过v-bind传值给子组件),子组件管辖公司所v-model的值是直接与父组件的值关联的,子组件并不能直接改变父组件的值.</p>
+<a id="more"></a></li>
+<li><strong>解决思路</strong> : 子组件表单(修改用户) 依旧通过props的editData获取父组件的值,在子组件created/watch的时候,在data中声明变量tempTreeObj. 将editData的treeCodesObj赋值给在data中声明变量tempTreeObj.<br>这样就可以修改子组件将editData的treeCodesObj赋值给在data中声明变量tempTreeObj值.<br><img src="https://user-images.githubusercontent.com/23348422/29757510-eca88f50-8bde-11e7-8ffe-8c9b48e00389.png" alt="image"></li>
+</ol>
+<hr>
+<p>�������ӣ�<a href="http://yoursite.com/2018/01/05/01_vue">http://yoursite.com/2018/01/05/01_vue</a> element ui表单修改子组件绑定值思路/</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/hello-world/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.265Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/hello-world/">Hello World</a>
-    </h1>
-  
+      
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2018/01/05/01_vue element ui表单修改子组件绑定值思路/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/03_在VUE中进行表格打印/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.261Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/03_在VUE中进行表格打印/">在VUE中进行日志表打印</a>
-    </h1>
+    <a href="/2018/01/05/02_JavaScript各种循环对比/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          JavaScript各种循环对比
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">ECMAScript 6 知识总结</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/02_JavaScript各种循环对比/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/02_JavaScript各种循环对比/">JavaScript各种循环对比</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/01_vue element ui表单修改子组件绑定值思路/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.244Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/">ECMAScript 6 知识总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -320,8 +315,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

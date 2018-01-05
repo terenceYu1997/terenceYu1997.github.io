@@ -6,14 +6,35 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives | Hexo</title>
+  <title>Vue的双向绑定原理以及如何使用$set解决视图不更新 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/archives/index.html">
+  <meta name="description" content="Vue的双向绑定原理以及如何使用$set解决视图不更新 使用了这么久Vue,一直没去了解Vue的双向绑定原理,正好最近做项目遇到了数据更新的问题,就顺便了解了下Vue的数据响应机制   我遇到的问题是在data中定义一个对象 –&amp;gt; btnControl,并在收到ajax数据时给btnControl动态添加属性,使用btnControl中的属性来控制div的隐藏与显示。       当我改变b">
+<meta name="keywords" content="Vue heheheh">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue的双向绑定原理以及如何使用$set解决视图不更新">
+<meta property="og:url" content="http://yoursite.com/2016/03/16/2018-01-04 Vue的data监听方式以及使用$set解决页面不及时更新的问题/index.html">
 <meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="Vue的双向绑定原理以及如何使用$set解决视图不更新 使用了这么久Vue,一直没去了解Vue的双向绑定原理,正好最近做项目遇到了数据更新的问题,就顺便了解了下Vue的数据响应机制   我遇到的问题是在data中定义一个对象 –&amp;gt; btnControl,并在收到ajax数据时给btnControl动态添加属性,使用btnControl中的属性来控制div的隐藏与显示。       当我改变b">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34564600-407a26ac-f192-11e7-8871-b03abaf3247f.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34564759-fbb57e12-f192-11e7-9764-7e9291854668.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34565872-783650f2-f197-11e7-9078-b07afdff9d6a.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34565843-56230abe-f197-11e7-96a8-20cc45f715ea.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34566181-9ef2c10c-f198-11e7-816b-93625910dbbb.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34566101-514c1282-f198-11e7-959c-b09c7389ecc7.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34566732-a2664000-f19a-11e7-8920-7a046401f69c.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34566919-5ca9a75e-f19b-11e7-87c2-031b55d335ec.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34567021-a7fada3e-f19b-11e7-9c39-19d2123cdf32.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34596987-ef5e1426-f21e-11e7-85f7-59a77c0c2f79.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34597073-75c747e4-f21f-11e7-879a-6134865dbb44.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34597179-204c2112-f220-11e7-8323-5b35ff2cbd52.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34597213-53201724-f220-11e7-8e1e-4af534bf63f9.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34597443-a1e45202-f221-11e7-8b05-147119b8ba37.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/34597546-418407c6-f222-11e7-85f4-8a5a76fed6e2.png">
+<meta property="og:updated_time" content="2018-01-05T06:30:34.723Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
+<meta name="twitter:title" content="Vue的双向绑定原理以及如何使用$set解决视图不更新">
+<meta name="twitter:description" content="Vue的双向绑定原理以及如何使用$set解决视图不更新 使用了这么久Vue,一直没去了解Vue的双向绑定原理,正好最近做项目遇到了数据更新的问题,就顺便了解了下Vue的数据响应机制   我遇到的问题是在data中定义一个对象 –&amp;gt; btnControl,并在收到ajax数据时给btnControl动态添加属性,使用btnControl中的属性来控制div的隐藏与显示。       当我改变b">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/23348422/34564600-407a26ac-f192-11e7-8871-b03abaf3247f.png">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -149,154 +170,240 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-2018-01-04 Vue的data监听方式以及使用$set解决页面不及时更新的问题" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Vue的双向绑定原理以及如何使用$set解决视图不更新
+    </h1>
+  
+
+        
+        <a href="/2016/03/16/2018-01-04 Vue的data监听方式以及使用$set解决页面不及时更新的问题/" class="archive-article-date">
+  	<time datetime="2016-03-16T00:12:43.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2016-03-16</time>
+</a>
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="Vue的双向绑定原理以及如何使用-set解决视图不更新"><a href="#Vue的双向绑定原理以及如何使用-set解决视图不更新" class="headerlink" title="Vue的双向绑定原理以及如何使用$set解决视图不更新"></a>Vue的双向绑定原理以及如何使用$set解决视图不更新</h2><blockquote>
+<p>使用了这么久Vue,一直没去了解Vue的双向绑定原理,正好最近做项目遇到了数据更新的问题,就顺便了解了下Vue的数据响应机制</p>
+</blockquote>
+<ol>
+<li><p>我遇到的问题是在data中定义一个对象 –&gt; btnControl,并在收到ajax数据时给btnControl<strong>动态添加属性</strong>,使用btnControl中的属性来控制div的隐藏与显示。</p>
+<ul>
+<li><img src="https://user-images.githubusercontent.com/23348422/34564600-407a26ac-f192-11e7-8871-b03abaf3247f.png" alt="image"></li>
+<li><img src="https://user-images.githubusercontent.com/23348422/34564759-fbb57e12-f192-11e7-9764-7e9291854668.png" alt="image"></li>
+</ul>
+<hr>
+</li>
+<li><p>当我改变btnControl中某个属性的值为<strong>True</strong>(<em>为了让当前input显示出来</em>) 的时候,浏览器的input并没有显示出来,在控制台输出的值的确是已经改变了!!!</p>
+<ul>
+<li><img src="https://user-images.githubusercontent.com/23348422/34565872-783650f2-f197-11e7-9078-b07afdff9d6a.png" alt="image"></li>
+<li><img src="https://user-images.githubusercontent.com/23348422/34565843-56230abe-f197-11e7-96a8-20cc45f715ea.png" alt="image"></li>
+</ul>
+<ol>
+<li><strong>在这边无论怎么点都没有响应</strong></li>
+</ol>
+<ul>
+<li><img src="https://user-images.githubusercontent.com/23348422/34566181-9ef2c10c-f198-11e7-816b-93625910dbbb.png" alt="image"></li>
+</ul>
+<ol>
+<li><strong>我想要这样的效果</strong>  </li>
+</ol>
+<ul>
+<li><img src="https://user-images.githubusercontent.com/23348422/34566101-514c1282-f198-11e7-959c-b09c7389ecc7.png" alt="image"></li>
+</ul>
+</li>
+<li><p>是什么原因导致页面没有及时更新呢? <strong>为什么vue没有监听到数据的变化而重新渲染页面呢? </strong> 问题就在这!!!</p>
+<ul>
+<li><a href="https://cn.vuejs.org/v2/guide/reactivity.html#%E6%A3%80%E6%B5%8B%E5%8F%98%E5%8C%96%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9" target="_blank" rel="external">vue官网</a></li>
+<li><img src="https://user-images.githubusercontent.com/23348422/34566732-a2664000-f19a-11e7-8920-7a046401f69c.png" alt="image"></li>
+</ul>
+</li>
+<li><p><strong>因为我的btnControl对象中的属性是动态添加的,没有在data中事先定义好,所以当属性改变时无法被vue监听到,做出响应</strong>(<em>重新渲染视图</em>)</p>
+<ul>
+<li><p>官网也给出了解决方案</p>
+</li>
+<li><p><img src="https://user-images.githubusercontent.com/23348422/34566919-5ca9a75e-f19b-11e7-87c2-031b55d335ec.png" alt="image"></p>
+</li>
+</ul>
+</li>
+<li><p>然后我修改了代码,实现了v-if的显示与隐藏.</p>
+<ul>
+<li><img src="https://user-images.githubusercontent.com/23348422/34567021-a7fada3e-f19b-11e7-9c39-19d2123cdf32.png" alt="image"></li>
+</ul>
+</li>
+<li><p><strong>那么Vue是通过什么来监听data中的数据改变呢?Vue是如何实现数据双向绑定的呢?</strong></p>
+<ul>
+<li><p><strong>Object.defineProperty</strong></p>
+</li>
+<li><p><strong>使用Object.defineProperty监听对象a的 ‘name’属性,当写入,读取时就会自动触发get/set!</strong></p>
+</li>
+<li><img src="https://user-images.githubusercontent.com/23348422/34596987-ef5e1426-f21e-11e7-85f7-59a77c0c2f79.png" alt="image"></li>
+</ul>
+</li>
+<li><p>我们来测试一下给a的name写入和读取</p>
+<ul>
+<li><strong>写入(set)</strong></li>
+<li><img src="https://user-images.githubusercontent.com/23348422/34597073-75c747e4-f21f-11e7-879a-6134865dbb44.png" alt="image"></li>
+<li><strong>这里触发了set中的console.log,并且也给input绑定上值了</strong></li>
+<li><p><img src="https://user-images.githubusercontent.com/23348422/34597179-204c2112-f220-11e7-8323-5b35ff2cbd52.png" alt="image"></p>
+</li>
+<li><p><strong>读取(get)</strong></p>
+</li>
+<li><img src="https://user-images.githubusercontent.com/23348422/34597213-53201724-f220-11e7-8e1e-4af534bf63f9.png" alt="image"></li>
+</ul>
+</li>
+<li><p><strong>因为我没有在data中事先定义btnControl的属性,所以vue无法侦听btnControl属性的变化–&gt;所以不能更新视图</strong></p>
+</li>
+<li><p><strong>那我使用的$set的原理是什么呢?我觉得是给指定对象添加了属性的监听,我决定去看下源码!</strong></p>
+<ul>
+<li><img src="https://user-images.githubusercontent.com/23348422/34597443-a1e45202-f221-11e7-8b05-147119b8ba37.png" alt="image"></li>
+<li><img src="https://user-images.githubusercontent.com/23348422/34597546-418407c6-f222-11e7-85f4-8a5a76fed6e2.png" alt="image"></li>
+</ul>
+</li>
+<li><p><strong>总结</strong></p>
+<blockquote>
+<p>  <strong>1. 想要vue的视图及时更新,就需要一开始在data中定义好,那么vue组件渲染时,就会给所有挂载在data中的对象深度遍历,对每个对象/属性进行监听!</strong></p>
+</blockquote>
+</li>
+</ol>
+<blockquote>
+<p>   <strong>2. 如果需要动态添加data中对象的属性,可以使用$set来添加–&gt;原理就是手动指定Object.defineProperty的监听对象,从而触发vue的数据驱动视图更新!</strong></p>
+<hr>
+</blockquote>
+<p>�������ӣ�<a href="http://yoursite.com/2016/03/16/2018-01-04">http://yoursite.com/2016/03/16/2018-01-04</a> Vue的data监听方式以及使用$set解决页面不及时更新的问题/</p>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我吃糖果<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2018" class="archive-year">2018</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/hello-world/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.265Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/hello-world/">Hello World</a>
-    </h1>
-  
+	<div class="article-tag tagcloud">
+		<i class="icon-price-tags icon"></i>
+		<ul class="article-tag-list">
+			 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color2">Vue heheheh</a>
+        		</li>
+      		
+		</ul>
+	</div>
 
-        <div class="article-info info-on-right">
-          
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="http://s.jiathis.com/qrcode.php?url=http://yoursite.com/2016/03/16/2018-01-04 Vue的data监听方式以及使用$set解决页面不及时更新的问题/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/03_在VUE中进行表格打印/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.261Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
+<nav id="article-nav">
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/03_在VUE中进行表格打印/">在VUE中进行日志表打印</a>
-    </h1>
+    <a href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          ECMAScript 6 知识总结
+        
+      </div>
+    </a>
+  
+  
+</nav>
+
+
+
+
+
+  
+  
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/02_JavaScript各种循环对比/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.256Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/02_JavaScript各种循环对比/">JavaScript各种循环对比</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/01_vue element ui表单修改子组件绑定值思路/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.248Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/" class="archive-article-date">
-  	<time datetime="2018-01-05T01:32:06.244Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2018-01-05</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2018/01/05/00_ECMAScript 6 知识总结(一、ES6与ES5的对比)/">ECMAScript 6 知识总结</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
-    <nav id="page-nav">
-      <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/">Next &raquo;</a>
-    </nav>
   
 
 
@@ -320,8 +427,8 @@
 	var yiliaConfig = {
 		mathjax: false,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,
