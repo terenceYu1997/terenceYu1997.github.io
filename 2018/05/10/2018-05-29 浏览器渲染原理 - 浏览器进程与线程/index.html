@@ -69,7 +69,7 @@
 
 
 
-  <meta name="keywords" content="ES6,vue,webpack,javascript,css3,html5,react,react native,element ui" />
+  <meta name="keywords" content="性能优化,浏览器线程/进程,js线程," />
 
 
 
@@ -80,16 +80,18 @@
 
 
 
-<meta name="description" content="Someday I&apos;ll trade them all for just a very one !">
-<meta property="og:type" content="website">
-<meta property="og:title" content="TerenceYu">
-<meta property="og:url" content="http://yoursite.com/tags/JavaScript引用类型/index.html">
+<meta name="description" content="之前只知道JS是单线程的,却不知道浏览器的多进程是如何与JS协调工作的,这篇文章就主要介绍浏览器的的进程与JS线程之间的关系.">
+<meta name="keywords" content="性能优化,浏览器线程&#x2F;进程,js线程">
+<meta property="og:type" content="article">
+<meta property="og:title" content="浏览器渲染原理 - 浏览器进程与线程">
+<meta property="og:url" content="http://yoursite.com/2018/05/10/2018-05-29 浏览器渲染原理 - 浏览器进程与线程/index.html">
 <meta property="og:site_name" content="TerenceYu">
-<meta property="og:description" content="Someday I&apos;ll trade them all for just a very one !">
+<meta property="og:description" content="之前只知道JS是单线程的,却不知道浏览器的多进程是如何与JS协调工作的,这篇文章就主要介绍浏览器的的进程与JS线程之间的关系.">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:updated_time" content="2018-05-29T12:05:53.355Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="TerenceYu">
-<meta name="twitter:description" content="Someday I&apos;ll trade them all for just a very one !">
+<meta name="twitter:title" content="浏览器渲染原理 - 浏览器进程与线程">
+<meta name="twitter:description" content="之前只知道JS是单线程的,却不知道浏览器的多进程是如何与JS协调工作的,这篇文章就主要介绍浏览器的的进程与JS线程之间的关系.">
 
 
 
@@ -119,13 +121,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/tags/JavaScript引用类型/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/10/2018-05-29 浏览器渲染原理 - 浏览器进程与线程/"/>
 
 
 
 
 
-  <title>标签: JavaScript引用类型 | TerenceYu</title>
+  <title>浏览器渲染原理 - 浏览器进程与线程 | TerenceYu</title>
   
 
 
@@ -154,7 +156,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -258,54 +260,250 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block tag">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>JavaScript引用类型<small>标签</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/10/2018-05-29 浏览器渲染原理 - 浏览器进程与线程/">
 
-      <h2 class="post-title">
-        
-            <a class="post-title-link" href="/2018/01/19/2018-01-19 ES5 & ES6实现对象深克隆/" itemprop="url">
-              
-                <span itemprop="name">ES5 & ES6 实现对象深度克隆</span>
-              
-            </a>
-        
-      </h2>
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="TerenceYu">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.png">
+    </span>
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated"
-              datetime="2018-01-19T16:37:15+08:00"
-              content="2018-01-19" >
-          01-19
-        </time>
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TerenceYu">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">浏览器渲染原理 - 浏览器进程与线程</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-10T13:12:05+08:00">
+                2018-05-10
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category" >
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/JS基础/" itemprop="url" rel="index">
+                    <span itemprop="name">JS基础</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+              <span class="post-meta-divider">|</span>
+              <span class="post-meta-item-icon">
+                <i class="fa fa-comment-o"></i>
+              </span>
+              
+                <a href="/2018/05/10/2018-05-29 浏览器渲染原理 - 浏览器进程与线程/#SOHUCS" itemprop="discussionUrl">
+                  <span id="changyan_count_unit" class="post-comments-count hc-comment-count" data-xid="2018/05/10/2018-05-29 浏览器渲染原理 - 浏览器进程与线程/" itemprop="commentsCount"></span>
+                </a>
+              
+            
+          
+
+          
+          
+             <span id="/2018/05/10/2018-05-29 浏览器渲染原理 - 浏览器进程与线程/" class="leancloud_visitors" data-flag-title="浏览器渲染原理 - 浏览器进程与线程">
+               <span class="post-meta-divider">|</span>
+               <span class="post-meta-item-icon">
+                 <i class="fa fa-eye"></i>
+               </span>
+               
+                 <span class="post-meta-item-text">阅读次数&#58;</span>
+               
+                 <span class="leancloud-visitors-count"></span>
+             </span>
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <blockquote>
+<p>之前只知道JS是单线程的,却不知道浏览器的多进程是如何与JS协调工作的,这篇文章就主要介绍浏览器的的进程与JS线程之间的关系.</p>
+</blockquote>
+ <a id="more"></a>
+<p>&nbsp;</p>
+<h4 id="区分进程与线程"><a href="#区分进程与线程" class="headerlink" title="区分进程与线程"></a><strong>区分进程与线程</strong></h4><p>先来一波官方解释:</p>
+<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a><strong>参考文章</strong></h4><p><a href="https://zhuanlan.zhihu.com/p/32333465" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32333465</a></p>
+<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a><strong>系列文章</strong></h4><p><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 页面加载过程</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 浏览器进程与线程</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 浏览器缓存原理</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - TCP与HTTP/HTTPS</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - Nginx响应原理</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - HTTP常见状态码</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 网络请求优化</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+      <div>
+        <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
+  <div></div>
+  <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
+    <span>打赏</span>
+  </button>
+  <div id="QR" style="display: none;">
+
+    
+      <div id="wechat" style="display: inline-block">
+        <img id="wechat_qr" src="/images/wechatpay.jpg" alt="TerenceYu 微信支付"/>
+        <p>微信支付</p>
       </div>
+    
 
-    </header>
-  </article>
+    
+      <div id="alipay" style="display: inline-block">
+        <img id="alipay_qr" src="/images/alipay.jpg" alt="TerenceYu 支付宝"/>
+        <p>支付宝</p>
+      </div>
+    
 
+    
+
+  </div>
+</div>
+
+      </div>
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">
+            -------------本文结束
+            <i class="fa fa-paw"></i>
+            感谢您的阅读-------------
+        </div>
+    
+</div>
 
       
     </div>
 
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/性能优化/" rel="tag"><i class="fa fa-tag"></i> 性能优化</a>
+          
+            <a href="/tags/浏览器线程-进程/" rel="tag"><i class="fa fa-tag"></i> 浏览器线程/进程</a>
+          
+            <a href="/tags/js线程/" rel="tag"><i class="fa fa-tag"></i> js线程</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/05/08/2018-05-08 整理JS常用正则/" rel="next" title="整理JS常用正则">
+                <i class="fa fa-chevron-left"></i> 整理JS常用正则
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/10/2018-05-10 浏览器渲染原理 - 页面加载过程/" rel="prev" title="浏览器渲染原理 - 页面加载过程">
+                浏览器渲染原理 - 页面加载过程 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -313,6 +511,15 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+      <div id="SOHUCS"></div>
+    </div>
+
+  
+
+
 
 
         </div>
@@ -334,8 +541,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -441,6 +657,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#区分进程与线程"><span class="nav-number">1.</span> <span class="nav-text">区分进程与线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">2.</span> <span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系列文章"><span class="nav-number">3.</span> <span class="nav-text">系列文章</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -595,6 +827,10 @@
 
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
