@@ -88,10 +88,14 @@
 <meta property="og:site_name" content="TerenceYu">
 <meta property="og:description" content="之前只知道JS是单线程的,却不知道浏览器的多进程是如何与JS协调工作的,这篇文章就主要介绍浏览器的的进程与JS线程之间的关系.">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-05-29T12:05:53.355Z">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/40659215-2b04ef2c-6380-11e8-8a18-a1c9e9790bd8.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/40659258-54c1f0e4-6380-11e8-832e-4a0c55991fe5.png">
+<meta property="og:image" content="https://user-images.githubusercontent.com/23348422/40659317-8279e73a-6380-11e8-86f7-6bf13b1c093d.png">
+<meta property="og:updated_time" content="2018-05-29T12:51:13.987Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器渲染原理 - 浏览器进程与线程">
 <meta name="twitter:description" content="之前只知道JS是单线程的,却不知道浏览器的多进程是如何与JS协调工作的,这篇文章就主要介绍浏览器的的进程与JS线程之间的关系.">
+<meta name="twitter:image" content="https://user-images.githubusercontent.com/23348422/40659215-2b04ef2c-6380-11e8-8a18-a1c9e9790bd8.png">
 
 
 
@@ -390,9 +394,18 @@
 </blockquote>
  <a id="more"></a>
 <p>&nbsp;</p>
-<h4 id="区分进程与线程"><a href="#区分进程与线程" class="headerlink" title="区分进程与线程"></a><strong>区分进程与线程</strong></h4><p>先来一波官方解释:</p>
-<h4 id="参考文章"><a href="#参考文章" class="headerlink" title="参考文章"></a><strong>参考文章</strong></h4><p><a href="https://zhuanlan.zhihu.com/p/32333465" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/32333465</a></p>
-<h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a><strong>系列文章</strong></h4><p><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 页面加载过程</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 浏览器进程与线程</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 浏览器缓存原理</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - TCP与HTTP/HTTPS</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - Nginx响应原理</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - HTTP常见状态码</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 网络请求优化</a></p>
+<h4 id="区分进程与线程"><a href="#区分进程与线程" class="headerlink" title="区分进程与线程"></a><strong>区分进程与线程</strong></h4><p>先来一波官方解释:<br>    <strong>进程</strong>: 是一个具有独立功能的程序在数据集上的一次动态执行的过程,是操作系统进行资源分配和调度的一个独立单位,是应用程序运行的载体<br>    <strong>线程</strong>: 是程序执行中单一的顺序控制流程,是程序执行流的最小单元.</p>
+<p>进程与线程的关系:</p>
+<pre><code>1. 进程是操作系统分配资源的最小单位,线程是程序执行中的最小单位.
+2. 一个进程可以由多个线程组成,线程是一个进程中代码不同的执行路线.
+3. 进程之间相互独立,但同一进程下各个线程共享程序的内存空间(包括代码段、数据集、堆等)及一些进程级的资源(如打开文件和信号)。
+4. 调度和切换：线程上下文切换比进程上下文切换要快得多。
+</code></pre><p>举个例子:</p>
+<pre><code>打开QQ,开了一个进程.
+在这个进程里,传输文字开了一个线程,发语音开了一个线程,弹出对话框又开了一个线程.
+也就是说多个线程支撑起了一个进程.一个进程负责调用多个线程
+</code></pre><h4 id="浏览器是多进程的"><a href="#浏览器是多进程的" class="headerlink" title="浏览器是多进程的"></a><strong>浏览器是多进程的</strong></h4><p>Chrome是多进程的,每个网页都是一个进程.<br><img src="https://user-images.githubusercontent.com/23348422/40659215-2b04ef2c-6380-11e8-8a18-a1c9e9790bd8.png" alt="image"><br><img src="https://user-images.githubusercontent.com/23348422/40659258-54c1f0e4-6380-11e8-832e-4a0c55991fe5.png" alt="image"><br><img src="https://user-images.githubusercontent.com/23348422/40659317-8279e73a-6380-11e8-86f7-6bf13b1c093d.png" alt="image"></p>
+<h4 id="浏览器都包含哪些进程"><a href="#浏览器都包含哪些进程" class="headerlink" title="浏览器都包含哪些进程?"></a><strong>浏览器都包含哪些进程?</strong></h4><h4 id="系列文章"><a href="#系列文章" class="headerlink" title="系列文章"></a><strong>系列文章</strong></h4><p><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 页面加载过程</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 浏览器进程与线程</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 浏览器缓存原理</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - TCP与HTTP/HTTPS</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - Nginx响应原理</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - HTTP常见状态码</a><br><a href="https://github.com/terenceYu1997/Practice/blob/master/05%20%E6%95%B4%E7%90%86JS%E5%B8%B8%E7%94%A8%E6%AD%A3%E5%88%99/index.html" target="_blank" rel="noopener">浏览器渲染原理 - 网络请求优化</a></p>
 
       
     </div>
@@ -471,8 +484,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/08/2018-05-08 整理JS常用正则/" rel="next" title="整理JS常用正则">
-                <i class="fa fa-chevron-left"></i> 整理JS常用正则
+              <a href="/2018/05/10/2018-05-10 浏览器渲染原理 - 页面加载过程/" rel="next" title="浏览器渲染原理 - 页面加载过程">
+                <i class="fa fa-chevron-left"></i> 浏览器渲染原理 - 页面加载过程
               </a>
             
           </div>
@@ -480,10 +493,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/05/10/2018-05-10 浏览器渲染原理 - 页面加载过程/" rel="prev" title="浏览器渲染原理 - 页面加载过程">
-                浏览器渲染原理 - 页面加载过程 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -667,7 +676,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#区分进程与线程"><span class="nav-number">1.</span> <span class="nav-text">区分进程与线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#参考文章"><span class="nav-number">2.</span> <span class="nav-text">参考文章</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系列文章"><span class="nav-number">3.</span> <span class="nav-text">系列文章</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#区分进程与线程"><span class="nav-number">1.</span> <span class="nav-text">区分进程与线程</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器是多进程的"><span class="nav-number">2.</span> <span class="nav-text">浏览器是多进程的</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#浏览器都包含哪些进程"><span class="nav-number">3.</span> <span class="nav-text">浏览器都包含哪些进程?</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#系列文章"><span class="nav-number">4.</span> <span class="nav-text">系列文章</span></a></li></ol></div>
             
 
           </div>
